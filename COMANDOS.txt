@@ -1,26 +1,36 @@
-git branch= mostrar rama(s)/agregar rama
-git checkout (branch)= cambio de rama
+ls -al= ver archivos ocultos
+git add <file> = agregar el archivo al staging
+git add . = agregar todos los archivos monificados
+
+git branch = mostrar rama(s)/agregar rama
+
+git checkout (branch) = cambio de rama
+git config= ver toda la congiguracion
+git config --global user.name/email "String" = agregar el nombre al usuario principal
+git config -l = mostrar en lista
+git commit -m "String" = agregar el archivo al repositorio con un mensaje
+git commit = abre el editor de texto vim
+git clone = clonar repositorio en la red / bajar el contenido de un repositorio en una carpeta
+git checkout id (del commit) <file>= regresar a la version anterior
+
+git diff (identificador inicial/final) (identificador inicial/final)
+
 git merge (name branch)= traer todos los cambios de una rama a la que se esta actualmenteg
 **(SALIR DE COMMIT CON esc+shif+z+z)
 **(ESCRIBIR EN VIM esc+i)
-staging= memoria ram
-ls -al= ver archivos ocultos
-git init= para inicializar un repositorio
-pwd= ruta actual
-nano <file>= crear archivo con nombre
-git status= mostrar el estatus actual del repositorio
-git add <file>= agregar el archivo al staging
-git add .= agregar todos los archivos monificados
-git config= ver toda la congiguracion
-git config --global user.name/email " "= agregar el nombre al usuario principal
-git config -l= mostrar en lista
-git commit -m ""= agregar el archivo al repositorio con un mensaje
-git commit= abre el editor de texto vim
-git show= mostrar cambios
+git init = para inicializar un repositorio
+pwd = ruta actual
+nano <file> = crear archivo con nombre
+git status = mostrar el estatus actual del repositorio
+git show = mostrar cambios
+staging = memoria ram
+
 git log <file>= muestra todo el historial de cambios
-git rm --cached <file>= sacar del repositorio y regresarlo al staging
-git restore= descartar cambios del archivo
-git diff (identificador inicial/final) (identificador inicial/final)
-git checkout id (del commit) <file>= regresar a la version anterior
-git reset id del commit --hard/soft= elimina de manera permanente hasta el commit puesto/ lo elimina pero el staging lo sigue guardande
-git clone = clonar repositorio en la red
+git push origin main = subir los cambios a Git
+
+git rm --cached <file> = sacar del repositorio y regresarlo al staging
+git restore = descartar cambios del archivo
+git reset id del commit --hard/soft = elimina de manera permanente hasta el commit puesto/ lo elimina pero el staging lo sigue guardande
+rm -rf .git = "desinicializar" el repositorio eliminando la carpeta .git
+rm -rf nombre-del-repositorio = eliminar un repositorio (pero el repositorio tambien se borra en las carpetas)
+git remote add origin https://github.com/tu-usuario/nombre-del-repo.git = agregar el repositorio de manera remota
