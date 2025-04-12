@@ -15,18 +15,22 @@ git checkout id (del commit) <file>= regresar a la version anterior
 
 git diff (identificador inicial/final) (identificador inicial/final)
 
-git merge (name branch)= traer todos los cambios de una rama a la que se esta actualmenteg
 **(SALIR DE COMMIT CON esc+shif+z+z)
 **(ESCRIBIR EN VIM esc+i)
 git init = para inicializar un repositorio
-pwd = ruta actual
+
+git log <file>= muestra todo el historial de cambios
+
+git merge (name branch)= traer todos los cambios de una rama a la que se esta actualmenteg
+
 nano <file> = crear archivo con nombre
+
+pwd = ruta actual
+git push origin main = subir los cambios a Git
+
 git status = mostrar el estatus actual del repositorio
 git show = mostrar cambios
 staging = memoria ram
-
-git log <file>= muestra todo el historial de cambios
-git push origin main = subir los cambios a Git
 
 git rm --cached <file> = sacar del repositorio y regresarlo al staging
 git restore = descartar cambios del archivo
