@@ -1,3 +1,5 @@
+**(SALIR DE COMMIT CON esc+shif+z+z)
+**(ESCRIBIR EN VIM esc+i)
 ls -al= ver archivos ocultos
 git add <file> = agregar el archivo al staging
 git add . = agregar todos los archivos monificados
@@ -17,8 +19,6 @@ git checkout id (del commit) <file>= regresar a la version anterior
 
 git diff (identificador inicial/final) (identificador inicial/final)
 
-**(SALIR DE COMMIT CON esc+shif+z+z)
-**(ESCRIBIR EN VIM esc+i)
 git init = para inicializar un repositorio
 
 git log <file>= muestra todo el historial de cambios
@@ -27,6 +27,7 @@ git merge (name branch)= traer todos los cambios de una rama a la que se esta ac
 
 nano <file> = crear archivo con nombre
 nano ~/.git-credentials = para cambiar las credenciales anterior
+https://tu-usuario:token-viejo@github.com = es como se muestra el archivo
 
 pwd = ruta actual
 git push origin main = subir los cambios a Git
