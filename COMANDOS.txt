@@ -7,6 +7,8 @@ git branch = mostrar rama(s)/agregar rama
 git checkout (branch) = cambio de rama
 git config= ver toda la congiguracion
 git config --global user.name/email "String" = agregar el nombre al usuario principal
+git config --global credential.helper store = guarda el token que se llegue a utilizar en el momento
+cat ~/.git-credentials = muestra el token que se este utilizando el momento
 git config -l = mostrar en lista
 git commit -m "String" = agregar el archivo al repositorio con un mensaje
 git commit = abre el editor de texto vim
@@ -24,6 +26,7 @@ git log <file>= muestra todo el historial de cambios
 git merge (name branch)= traer todos los cambios de una rama a la que se esta actualmenteg
 
 nano <file> = crear archivo con nombre
+nano ~/.git-credentials = para cambiar las credenciales anterior
 
 pwd = ruta actual
 git push origin main = subir los cambios a Git
