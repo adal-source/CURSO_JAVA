@@ -17,6 +17,17 @@ public class EjemploJavaUtilDate {
         /// se pone el dia de la sema con E y con EE para EEEE
         //SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
         String fechaStr = df.format(fecha);
-        System.out.println("df = " + fechaStr);
+
+        long j = 0;
+        for (int i = 0; i < 100000000; i++){
+            j += i;
+
+        }
+        System.out.println("j = " + j);
+
+        Date fecha2 = new Date();
+        long tiempoFinal = fecha2.getTime() - fecha.getTime();
+        System.out.println("tiempo trasncurrido en el for = " + tiempoFinal);
+        System.out.println("fechaStr = " + fechaStr);
     }
 }
