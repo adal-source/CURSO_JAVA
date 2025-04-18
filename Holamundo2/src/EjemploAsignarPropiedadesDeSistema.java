@@ -38,7 +38,11 @@ public class EjemploAsignarPropiedadesDeSistema {
             * */
         } catch (FileNotFoundException e) {
             //throw new RuntimeException(e);
+            /// se puede poner err en luagr de out, esto es para que el error resalte de colo rojo
             System.out.println("no existe el archivo = " + e);
+            // System.exit(1);
+            ///en caso de una falla se vuelve a iniciar el programa
+            // main(args);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
