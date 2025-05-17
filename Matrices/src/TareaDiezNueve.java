@@ -10,7 +10,7 @@ public class TareaDiezNueve {
         for (int i = 0; i < numero; i++) {
             for (int j = 0; j < numero; j++) {
                 /// imprimiendo solo la primera columna, la mitad de todo
-            /// hasta el final y cuando es menos de la mitad
+                /// hasta el final y cuando es menos de la mitad
                 if (j == 0 || i == numero / 2 || (j == numero - 1
                         && i > numero / 2)) {
                     System.out.print("1");
