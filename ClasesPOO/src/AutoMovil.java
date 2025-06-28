@@ -6,20 +6,46 @@ public class AutoMovil {
     private double cilindrada;
     private int capacidadTanque = 40;
 
+    private static String colorPatente = "naranja";
+
     // ejemplo de un constructor
     /// no es un miembro de la clase y es void por defecto aun que no se pone
-    /*
+    public AutoMovil(){}
+
+    public AutoMovil(String fabricante){
+        this.fabricante = fabricante;
+    }
+
     public AutoMovil(String fabricante, String modelo){
         this.fabricante = fabricante;
         this.modelo = modelo;
     }
 
-    public AutoMovil(String fabricante, String modelo){
+    public AutoMovil(String fabricante, String modelo, String color){
         // forma de llamar al constructor de esta manera se ahorra codigo o se optimiza
-        this.(fabricante, modelo);
+        this(fabricante, modelo);
         this.color = color;
     }
-    */
+
+    public AutoMovil(String fabricante, String modelo, String color, double cilindrada){
+        // forma de llamar al constructor de esta manera se ahorra codigo o se optimiza
+        this(fabricante, modelo, color);
+        this.cilindrada = cilindrada;
+    }
+
+    public AutoMovil(String fabricante, String modelo, String color, double cilindrada, int capacidadTanque){
+        this(fabricante, modelo, color, cilindrada);
+        this.capacidadTanque = capacidadTanque;
+    }
+
+
+    public static String getColorPatente(){
+        return colorPatente;
+    }
+
+    public static void setColorPatente(String colorPatente) {
+        AutoMovil.colorPatente = colorPatente;
+    }
 
     public String getFabricante(){
         return this.fabricante;
@@ -57,12 +83,13 @@ public class AutoMovil {
     }
 
     /// funciones / comportamientos
-    public String detalle(){ //verDetalle
+    public String verDetalle(){ //verDetalle
         /// por defecto se asume que es atributo de la clase
 
         String sb = "this.fabricante = " + this.fabricante +
                 "\n this.modelo = " + this.modelo +
                 "\n this.color = " + this.color +
+                "\n auto.patenteColor = " + colorPatente +
                 "\n this.cilindrada = " + this.cilindrada;
         return sb;
 
@@ -129,5 +156,18 @@ public class AutoMovil {
                 &&this.fabricante.equals(a.getFabricante())
                 && this.modelo.equals(a.getModelo()));
     }
+
+   /* @Override// sobre escirbiendo la clase padre
+    public String toString(){
+        return "Automovil{" +
+                "fabricante=" + fabricante + '\'' +
+                ", modelo=" + modelo + '\'' +
+                ", color=" + color + '\'' +
+                ", cilindrada" + cilindrada + '\'' +
+                ", capacidadEstanque" + capacidadTanque + '\'' +
+                "}";
+    }
+    *
+    */
 }
 

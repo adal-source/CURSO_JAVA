@@ -38,10 +38,10 @@ public class EjemploAutoMovil {
         /// para imprimir todo
         System.out.println(auto.getFabricante());
         //auto.detalle();
-        System.out.println(auto.detalle());
-        System.out.println();
+        System.out.println(auto.verDetalle());
+        System.out.println(nissan);
         //mazda.detalle();
-        System.out.println(mazda.detalle());
+        System.out.println(mazda.verDetalle());
         System.out.println(auto.acelerar(3000));
         System.out.println(auto.frenar());
 
@@ -52,5 +52,6 @@ public class EjemploAutoMovil {
         System.out.println("kilometros por litro " + auto.calcularConsumo(300, 60));
 
         System.out.println(nissan);
+        System.out.println(nissan.toString());
     }
 }
