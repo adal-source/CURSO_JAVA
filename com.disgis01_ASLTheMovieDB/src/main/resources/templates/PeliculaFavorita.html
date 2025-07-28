@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+    <head>
+        <style>
+
+            body{
+                background-color:  #c7ceb9;
+            }
+
+        </style>
+    </head>
+    <body layout:fragment="body">
+        <h1>BIENVENIDO A LA Pelicula Favorita </h1>
+
+        <div th:if="${sessionId != null}">
+            <!--<p>Sesión activa: <strong th:text="${sessionId}"></strong></p>-->
+            <input type="text" th:value="${sessionId}">
+            <p>Sesión activa: <strong th:text="${username}"></strong></p>
+        </div>
+        <div th:if="${sessionId == null}">
+            <p>Sesión no iniciada</p>
+        </div>
+
+        <div class="container">
+            <!--<input type="hidden" th:text="">-->
+            <div class="row fw-bold border-bottom py-2">
+                <div class="col">ID</div>
+                <div class="col">Imagen</div>
+                <div class="col">Nombre</div>
+                <div class="col">Contacto</div>
+                <div class="col">Roll</div>
+            </div>
+
+            <div class="row border-bottom py-2 align-items-center" th:each="pelicula : ${peliculas}">
+                <div class="col" 
+                     th:text="${pelicula.id}" 
+                     th:attr="data-id=${pelicula.id}" 
+                     id="ddlidPelicula">
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <img style="width: 100px"
+                             th:src="${pelicula.poster_path == null} ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2048px-User_icon_2.svg.png' : 'https://image.tmdb.org/t/p/w500' + ${pelicula.poster_path}" 
+                             alt="Poster"/>
+                    </div>
+                    <div class="row" th:if="${sessionId != null}">
+
+                        <button id="btnCorazon" class="btnCorazon">
+                            <span><i class="bi bi-heart-fill iconoCorazonLleno" ></i></span>
+                            <span><i class="bi bi-heart iconoCorazonVacio" style="display:none;"></i></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col"
+                     th:text="|${pelicula.release_date} ${pelicula.vote_average} ${pelicula.vote_count}|">
+                </div>
+
+                <div class="col"
+                     th:text="|correo: ${pelicula.original_language} cel: ${pelicula.original_title} tel: ${pelicula.popularity}|">
+                </div>
+
+                <div class="col"
+                     th:text="${pelicula.overview}">
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+            $('.btnCorazon').each(function () {
+            const boton = $(this);
+            boton.find('.iconoCorazonLleno').show();
+            boton.find('.iconoCorazonVacio').hide();
+
+            boton.click(function () {
+                boton.find('.iconoCorazonLleno').toggle();
+                boton.find('.iconoCorazonVacio').toggle();
+            });
+        });
+
+            let guestSessionId = /*[[${guestSessionId}]]*/ '';
+            console.log("Guest session ID:", guestSessionId);
+
+            });
+
+        </script>
+    </body>
+</html>
